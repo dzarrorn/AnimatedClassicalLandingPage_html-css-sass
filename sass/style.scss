@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&family=Kaushan+Script&family=Nunito:wght@200;300;400;600;700&display=swap");
+$gold: #fee4a2;
+$black: #2b272f;
+* {
+  font-family: "Kaushan Script", sans-serif;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+}
+nav {
+  height: 100vh;
+  width: 30rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  ul {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    list-style-type: none;
+    position: relative;
+    &::before,
+    &::after {
+      content: "";
+      height: 10rem;
+      width: 90%;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &::before {
+      background: url(../images/top.jpg) no-repeat;
+      background-size: 100%;
+      background-position: center;
+      top: 5%;
+      animation: fadeIN1 1s linear 1;
+    }
+    &::after {
+      background: url(../images/bottom.jpg) no-repeat;
+      background-size: 100%;
+      background-position: center;
+      bottom: 5%;
+      animation: fadeIN2 1s linear 1;
+    }
+    li {
+      margin: 1.5rem 0;
+      a {
+        font-size: 2rem;
+        text-decoration: none;
+        color: $gold;
+        position: relative;
+        animation: fadeIN3 1s linear 1;
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          height: 100%;
+          width: 0%;
+          transition: 0.2s linear;
+        }
+        &::before {
+          background: url(../images/left.jpg) no-repeat;
+          background-size: 100%;
+          background-position: center;
+          right: 120%;
+        }
+        &::after {
+          background: url(../images/right.jpg) no-repeat;
+          background-size: 100%;
+          background-position: center;
+          left: 120%;
+        }
+        &:hover::before,
+        &:hover::after {
+          width: 60%;
+        }
+      }
+    }
+  }
+}
+main {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(90deg, $gold 78%, #000 0%);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  .image {
+    margin: 0 4rem;
+    img {
+      width: 20vw;
+      animation: float 3s linear infinite 1s;
+    }
+  }
+  .content {
+    text-align: center;
+    margin-right: 45rem;
+    margin-top: 10rem;
+    color: $black;
+    h1 {
+      font-size: 5rem;
+    }
+    h3 {
+      font-size: 2rem;
+      margin: 0.5rem 0;
+    }
+    strong {
+      font-size: 3rem;
+      margin: 0.5rem 0;
+    }
+    button {
+      outline: none;
+      border: none;
+      background: transparent;
+      border-radius: 5rem;
+      cursor: pointer;
+      font-size: 1.5rem;
+      font-weight: bold;
+      height: 4rem;
+      width: 14rem;
+      border: 0.2rem solid $black;
+      margin: 1.5rem 0;
+      transition: 0.2s linear;
+      &:hover {
+        background: $black;
+        color: $gold;
+      }
+    }
+    .icons {
+      margin: 2rem 0;
+      a {
+        text-decoration: none;
+        font-size: 2rem;
+        color: $black;
+        margin: 0.5rem;
+        cursor: pointer;
+        transition: 0.2s linear;
+        &:hover {
+          transform: translateY(-0.5rem);
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIN1 {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -4rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0rem);
+  }
+}
+@keyframes fadeIN2 {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 4rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0rem);
+  }
+}
+@keyframes fadeIN3 {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5rem);
+  }
+}

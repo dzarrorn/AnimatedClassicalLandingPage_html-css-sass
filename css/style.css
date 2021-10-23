@@ -1,0 +1,301 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&family=Kaushan+Script&family=Nunito:wght@200;300;400;600;700&display=swap");
+* {
+  font-family: "Kaushan Script", sans-serif;
+  text-transform: uppercase;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+nav {
+  height: 100vh;
+  width: 30rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+nav ul {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  list-style-type: none;
+  position: relative;
+}
+
+nav ul::before, nav ul::after {
+  content: "";
+  height: 10rem;
+  width: 90%;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+nav ul::before {
+  background: url(../images/top.jpg) no-repeat;
+  background-size: 100%;
+  background-position: center;
+  top: 5%;
+  -webkit-animation: fadeIN1 1s linear 1;
+          animation: fadeIN1 1s linear 1;
+}
+
+nav ul::after {
+  background: url(../images/bottom.jpg) no-repeat;
+  background-size: 100%;
+  background-position: center;
+  bottom: 5%;
+  -webkit-animation: fadeIN2 1s linear 1;
+          animation: fadeIN2 1s linear 1;
+}
+
+nav ul li {
+  margin: 1.5rem 0;
+}
+
+nav ul li a {
+  font-size: 2rem;
+  text-decoration: none;
+  color: #fee4a2;
+  position: relative;
+  -webkit-animation: fadeIN3 1s linear 1;
+          animation: fadeIN3 1s linear 1;
+}
+
+nav ul li a::before, nav ul li a::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  height: 100%;
+  width: 0%;
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+}
+
+nav ul li a::before {
+  background: url(../images/left.jpg) no-repeat;
+  background-size: 100%;
+  background-position: center;
+  right: 120%;
+}
+
+nav ul li a::after {
+  background: url(../images/right.jpg) no-repeat;
+  background-size: 100%;
+  background-position: center;
+  left: 120%;
+}
+
+nav ul li a:hover::before, nav ul li a:hover::after {
+  width: 60%;
+}
+
+main {
+  height: 100vh;
+  width: 100vw;
+  background: -webkit-gradient(linear, left top, right top, color-stop(78%, #fee4a2), color-stop(0%, #000));
+  background: linear-gradient(90deg, #fee4a2 78%, #000 0%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+main .image {
+  margin: 0 4rem;
+}
+
+main .image img {
+  width: 20vw;
+  -webkit-animation: float 3s linear infinite 1s;
+          animation: float 3s linear infinite 1s;
+}
+
+main .content {
+  text-align: center;
+  margin-right: 45rem;
+  margin-top: 10rem;
+  color: #2b272f;
+}
+
+main .content h1 {
+  font-size: 5rem;
+}
+
+main .content h3 {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+}
+
+main .content strong {
+  font-size: 3rem;
+  margin: 0.5rem 0;
+}
+
+main .content button {
+  outline: none;
+  border: none;
+  background: transparent;
+  border-radius: 5rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+  height: 4rem;
+  width: 14rem;
+  border: 0.2rem solid #2b272f;
+  margin: 1.5rem 0;
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+}
+
+main .content button:hover {
+  background: #2b272f;
+  color: #fee4a2;
+}
+
+main .content .icons {
+  margin: 2rem 0;
+}
+
+main .content .icons a {
+  text-decoration: none;
+  font-size: 2rem;
+  color: #2b272f;
+  margin: 0.5rem;
+  cursor: pointer;
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+}
+
+main .content .icons a:hover {
+  -webkit-transform: translateY(-0.5rem);
+          transform: translateY(-0.5rem);
+}
+
+@-webkit-keyframes fadeIN1 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -4rem);
+            transform: translate(-50%, -4rem);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, 0rem);
+            transform: translate(-50%, 0rem);
+  }
+}
+
+@keyframes fadeIN1 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -4rem);
+            transform: translate(-50%, -4rem);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, 0rem);
+            transform: translate(-50%, 0rem);
+  }
+}
+
+@-webkit-keyframes fadeIN2 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, 4rem);
+            transform: translate(-50%, 4rem);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, 0rem);
+            transform: translate(-50%, 0rem);
+  }
+}
+
+@keyframes fadeIN2 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, 4rem);
+            transform: translate(-50%, 4rem);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, 0rem);
+            transform: translate(-50%, 0rem);
+  }
+}
+
+@-webkit-keyframes fadeIN3 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes fadeIN3 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes float {
+  0%,
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-5rem);
+            transform: translateY(-5rem);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-5rem);
+            transform: translateY(-5rem);
+  }
+}
+/*# sourceMappingURL=style.css.map */
